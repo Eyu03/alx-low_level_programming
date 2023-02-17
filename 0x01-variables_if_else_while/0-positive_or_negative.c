@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-
 /**
  * main - Positive anything is better than negative nothing
  * Descriptio: Get a random number and print the number
@@ -21,3 +20,4 @@ int main(void)
 	else
 		printf("%d is negative\n", n);
 	return (0);
+}
