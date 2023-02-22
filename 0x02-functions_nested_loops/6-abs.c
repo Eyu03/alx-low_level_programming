@@ -1,17 +1,13 @@
 #include "main.h"
 /**
- * _abs - calculate the absolute value of the number from zero.
- * @n: the integer to be converted.
- * Return: absolute value of the input number.
+ * print_last_digit - prints the last digit of a numer.
+ * @n: digit to find the last place of.
+ * Return: The last digit.
  */
-int _abs(int n)
+int print_last_digit(int n)
 {
-	int a = n % 10; 
-
-	if (a < 0)
-		a *= -1;
-
-	_putchar(a + '0');
-
-	return (0);
+	if (n < 0)
+		n = n * -1;
+	_putchar((n % 10) + '0');
+	return (n % 10);
 }
