@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 /**
  * print_times_table - prints the times table for n.
  * @n: The multiplication table requested.
@@ -7,7 +7,6 @@
 void print_times_table(int n)
 {
 	int i, j, res;
-
 	if (!(n > 15 || n < 0))
 	{
 		for (i = 0; i <= n; i++)
