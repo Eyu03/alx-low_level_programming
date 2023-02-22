@@ -2,9 +2,9 @@
 /**
  * print_times_table - prints the times table for n.
  * @n: The multiplication table requested.
- * Return: Nothing.
+ * Return: Noting
  */
-void print_times_tables(int n)
+void print_time_tables(int n)
 {
 	int i, j, res;
 
