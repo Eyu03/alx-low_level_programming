@@ -6,7 +6,12 @@
  */
 int _abs(int n)
 {
-	if (n < 0)
-		n = n * -1;
-	return (n);
+	int a = n % 10; 
+
+	if (a < 0)
+		a *= -1;
+
+	_putchar(a + '0');
+
+	return (0);
 }
