@@ -6,42 +6,43 @@
  */
 void print_time_tables(int n)
 {
-	int i, j, res;
+	int a = 0, rep, b;
 
-	if (!(n > 15 || n < 0))
+	if (n < 0 || n > 15)
+		return;
+
+	while (a <= n)
 	{
-		for (i = 0; i <= n; i++)
+		for (b = 0; b <= n; b++)
 		{
-			for (j = 0; j <= n; j++)
+			rep = a * b;
+			if (b == 0)
+				_putchar('0' + rep);
+			else if (rep < 10)
 			{
-				res = (i * j);
-				if (j != 0)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-				if (res < 10 && j != 0)
-				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((res % 10) + '0');
-				}
-				else if (res >= 10 && res < 100)
-				{
-					_putchar(' ');
-					_putchar((res / 10) + '0');
-					_putchar((res % 10) + '0');
-				}
-				else if (res >= 100 && j != 0)
-				{
-					_putchar((res / 100) + '0');
-					_putchar((res / 10) % 10 + '0');
-					_putchar((res % 10) + '0');
-				}
-				else
-					_putchar((res % 10) + '0');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar('0' + rep);
+			}
+			else if (rep < 100)
+			{
+				_putchar(' ');
+                                _putchar('0' + rep / 10);
+                                _putchar('0' + rep % 10);
+			}
+			else
+			{
+				_putchar('0' + rep / 100);
+                                _putchar('0' + (rep - 100) / 10);
+                                _putchar('0' + rep % 10);
+			}
+			if (b < n)
+			{
+				_putchar(',');
+				_putchar(' ');
 			}
 			_putchar('\n');
+			a++;
 		}
 	}
 }
