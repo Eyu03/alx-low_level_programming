@@ -1,45 +1,47 @@
-#include <stdio.h>
-/**
-  * main - print the first 98 fibonacci numbers.
-  * Return: Nothing.
-  */
-int main(void)
-{
-	int count;
-	unsigned long i, j, k;
-	unsigned long m, n, p, carry;
+#include "main.h"
 
-	count = 0;
-	i = 0;
-	j = 1;
-	for (count = 1; count <= 91; count++)
-	{
-		k = i + j;
-		i = j;
-		j = k;
-		printf("%lu, ", k);
-	}
-	m = i % 1000;
-	i = i / 1000;
-	n = j % 1000;
-	j = j / 1000;
-	while (count <= 98)
-	{
-		carry = (m + n) / 1000;
-		p = (m + n) - carry * 1000;
-		k = (i + j) + carry;
-		m = n;
-		n = p;
-		i = j;
-		j = k;
-		if (p >= 100)
-			printf("%lu%lu", k, p);
-		else
-			printf("%lu0%lu", k, p);
-		if (count != 98)
-			printf(", ");
-		count++;
-	}
-	putchar('\n');
-	return (0);
+/**
+ * print_times_table - prints the n times table, starting with 0
+ * @n: number of the times table
+ */
+void print_times_table(int n)
+{
+  int i, j, k;
+
+  if (n >= 0 && n <= 15)
+  {
+    for (i = 0; i <= n; i++)
+    {
+      for (j = 0; j <= n; j++)
+      {
+        k = j * i;
+        if (j == 0)
+        {
+          _putchar(k + '0');
+        } else if (k < 10 && j != 0)
+        {
+          _putchar(',');
+          _putchar(' ');
+          _putchar(' ');
+          _putchar(' ');
+          _putchar(k + '0');
+        } else if (k >= 10 && k < 100)
+        {
+          _putchar(',');
+          _putchar(' ');
+          _putchar(' ');
+          _putchar((k / 10) + '0');
+          _putchar((k % 10) + '0');
+        } else if (k >= 100)
+        {
+          _putchar(',');
+          _putchar(' ');
+          _putchar((k / 100) + '0');
+          _putchar(((k / 10) % 10) + '0');
+          _putchar((k % 10) + '0');
+        }
+      }
+      _putchar('\n');
+    }
+  }
 }
