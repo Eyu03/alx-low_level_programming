@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <main.h>
 /**
  * main - Prints the numbers 1 - 100,
  *   instead of multiples of 3, print Fizz
