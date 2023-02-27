@@ -1,7 +1,5 @@
-#include "main.h"
-
 /**
- * puts_half - Prints out the first half of a string.
+ * puts_half - Prints a string, followed by a new line
  * @str: input string to print.
  * Return: void
  */
