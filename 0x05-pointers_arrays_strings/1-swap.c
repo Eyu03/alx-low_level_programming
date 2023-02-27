@@ -1,13 +1,15 @@
-/**
- * swap_int - swap variable value
- * @a:pointera
- * @b:pointerb
- * Return: void
- */
+#include "main.h"
 
-void swap_int(int *a, int *b);
+/**
+ * swap_int - switches value of first input with the value of the second input.
+ * @a: First value to swap.
+ * @b: Second value to swap.
+ */
+void swap_int(int *a, int *b)
 {
-	*a += *b;
-	*b = *a - *b;
-	*a = *a - *b;
+	int c;
+
+	c = *a;
+	*a = *b;
+	*b = c;
 }
