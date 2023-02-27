@@ -1,5 +1,3 @@
-#include "main.h"
-
 /**
  * swap_int - swap variable value
  * @a:pointera
