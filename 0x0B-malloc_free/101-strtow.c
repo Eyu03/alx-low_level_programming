@@ -59,7 +59,6 @@ char **strtow(char *str)
 		return (NULL);
 	for (i = 0, wordlen = 0; i < wc; i++)
 	{
-		/* Allocate memory for nested elements */
 		wordlen = wordcounter(str, i + 1, 0);
 		if (i == 0 && str[i] != ' ')
 			wordlen++;
@@ -71,7 +70,7 @@ char **strtow(char *str)
 			free(p);
 			return (NULL);
 		}
-		/* initialize each element of the nested array with the word*/
+		
 		getfirstchar = wordcounter(str, i + 1, 1);
 		if (str[0] != ' ' && i > 0)
 			getfirstchar++;
